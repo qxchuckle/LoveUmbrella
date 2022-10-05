@@ -65,7 +65,7 @@ btn1.addEventListener("click", function () {
 	oLoding1.innerHTML = "<img src='loding.gif'>登录中";
 	fetch('https://mock.apifox.cn/m1/1703731-0-default/login', {
 		method: "POST",
-		body: JSON.stringify({ account: account1.value, password: password1.value }),
+		body: JSON.stringify({ username: account1.value, password: password1.value }),
 		headers: {
 			"Content-Type": "application/json"
 		},
@@ -92,7 +92,7 @@ btn1.addEventListener("click", function () {
 btn2.addEventListener("click", function () {
 	oError.innerHTML = "";
 	if (account2.value.length > 20 || account2.value.length < 2) {
-		oError.innerHTML = "账号请输入2-20位字符";
+		oError.innerHTML = "用户名请输入2-20位字符";
 		return;
 	}
 	if (password2.value.length > 20 || password2.value.length < 6) {
@@ -112,7 +112,7 @@ btn2.addEventListener("click", function () {
 	oLoding2.innerHTML = "<img src='loding.gif'>注册中";
 	fetch('https://mock.apifox.cn/m1/1703731-0-default/register', {
 		method: "POST",
-		body: JSON.stringify({ account: account2.value, password: password2.value, email: email.value }),
+		body: JSON.stringify({ username: account2.value, password: password2.value, email: email.value }),
 		headers: {
 			"Content-Type": "application/json"
 		},
